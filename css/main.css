@@ -1,1 +1,266 @@
+/* Base style
+   ========================================================================== */
+   
+/* Fonts */
+
+
+html{ -webkit-user-select: none; -ms-user-select: none; user-select: none; background:#0970b5;}
+
+/*-- Percent Loader -- */
+#mainLoader{position:absolute; z-index:5; display:none; font-size:30px; line-height:30px; color:#fff; text-align:center; width:100%; font-family:'Outfit';}
+
+/*-- Mobile Rotate Instruction -- */
+#rotateHolder{position:absolute;width:100%;height:100%;background-color:#0970b5;z-index:1000; display:none;}
+.mobileRotate{width:200px;height:auto;position:absolute;text-align:center;top:45%;left:calc(50% - 100px)}
+.rotateImg{ margin-bottom:10px;}
+.rotateDesc{color:#fff; font-size:20px; line-height:20px; font-family:'Outfit';}
+.rotatePortrait{ animation:spinPortrait .5s linear infinite; }
+.rotateLandscape{ animation:spinLandscape .5s linear infinite; }
+
+@keyframes spinPortrait {
+	0% { transform:rotate(-90deg); }
+  	50% { transform:rotate(0deg); }
+	100% { transform:rotate(0deg); } 
+}
+
+@keyframes spinLandscape {
+  	50% { transform:rotate(90deg); }
+	100% { transform:rotate(90deg); } 
+}
+
+/*-- Content Wrapper -- */
+#mainHolder{position:relative; width:100%; height:100%; display:none; background: url(../assets/background.svg) center no-repeat; background-size: cover; font-family:'Outfit';}
+#option{ position:absolute; top:15px; right:15px; z-index:20; width: 5%; max-width: 60px; min-width: 40px; }
+#buttonScoreboard{ position: absolute; right: 125%; }
+.buttonFullscreen, .buttonSound, .buttonExit{ margin:5px 0px;}
+.buttonSoundOn .soundOff{ display:block;}
+.buttonSoundOn .soundOn{ display:none;}
+.buttonSoundOff .soundOn{ display:block;}
+.buttonSoundOff .soundOff{ display:none;}
+
+.buttonOptionOn .optionOff{ display:block;}
+.buttonOptionOn .optionOn{ display:none;}
+.buttonOptionOff .optionOn{ display:block;}
+.buttonOptionOff .optionOff{ display:none;}
+
+.buttonIcon{ width:100%;}
+.fontLoader{font-family:'Outfit'; font-size:25px; line-height:25px; color:#fff;}
+
+/*-- Logo Wrapper -- */
+#logoHolder{display: table; position: absolute; height: 100%; width: 100%; color:#FFF; text-align:center;}
+.logo{ width:50%; margin:auto; padding-top:7%;}
+#logoHolder .action{ position:absolute; top:65%; width:100%; }
+#logoHolder .preloadText{margin-top:10px;}
+#logoHolder .startImg{ width:15%; margin:auto; margin-top:10px;}
+
+/*-- Confirm Wrapper -- */
+#confirmHolder{ width:100%; height:100%; margin:auto; position:absolute; overflow: hidden; z-index:1000;}
+.confirmContent .message{ position:absolute; background:#107FC9; width:50%; height:50%; left:25%; top:30%; text-align:center; -webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px; color:#FFF; padding:5% 10%;}
+
+.confirmContent .okImg{ position:absolute; width:20%; top:63%; left:29%;}
+.confirmContent .cancelImg{ position:absolute; width:20%; top:63%; right:29%;}
+.overlayBg{background:url(../assets/bg_pixel.png) repeat;}
+
+/*-- Category Wrapper -- */
+#questionLoaderHolder{ width:100%; height:100%; margin:auto; position:relative; overflow: hidden; background:url(../assets/ajax-loader.gif) center no-repeat;}
+
+
+/*-- Category Wrapper -- */
+#categoryHolder{ width:100%; height:100%; margin:auto; position:relative; overflow: hidden;}
+.categoryContent ul{ list-style:none; padding:0; margin:0; color:#FFF; width:80%; margin:auto; padding-top:10%;}
+.categoryContent li{ width:29%; float:left; margin:0 2%;}
+.categoryContent .categoryTitle{ padding:5%; text-align:center;}
+.categoryContent .nextImg{ position:absolute; width:5%; top:85%; right:44%;}
+.categoryContent .prevImg{ position:absolute; width:5%; top:85%; left:44%;}
+.categoryContent .categoryNav{ position:absolute; width:5%; top:10%; left:10%; width:80%; text-align: left; color: #fff;}
+.categoryContent .categoryNav .active{ text-decoration: underline; }
+
+/*-- Question Wrapper -- */
+#gameHolder{ width:100%; height:100%; margin:auto; position:relative; overflow: hidden;}
+#gameStatus{ position:absolute; top:0; left:0; margin:15px; width:100%; height:100%;}
+#gameStatus .gameTotal{ position:absolute; top:0; left:0; width:9%;}
+#gameStatus .gameTimer{ position:absolute; top:0; left:41%; width:15%; text-align:center;}
+.gameQuestionStatus{ position:absolute; top:18%; text-align:center; color:#524e9a; width:100%;}
+.gameTimerStatus{ position:absolute; top:18%; text-align:center; color:#524e9a; width:100%; left:18%;}
+
+#questionHolder{ position:relative; width:100%; height:100%;}
+#questionHolder .question{ position:absolute; width:100%; white-space: pre-line;}
+#bgHolder{ position:absolute; width:100%; height:100%;}
+#bgHolder .background{ position:absolute; width:100%;}
+#videoHolder{position:absolute;}
+#answerHolder{ position:absolute; width:100%; height:100%;}
+#answerHolder .answer{ position:absolute; width:100%; white-space: pre-line;}
+#answerHolder .drop, #answerHolder .dropLabel{ position:absolute; width:100%; white-space: pre-line;}
+#answerHolder .answerFocus{ z-index:100;}
+#inputHolder{ position:absolute; width:100%; height:100%;}
+#inputHolder .input{ position:absolute; width:100%;}
+#inputHolder input{ border:none; -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */}
+#groupHolder{ position:absolute; width:100%; height:100%;}
+#groupHolder .groupDrop, #groupHolder .groupDropLabel{ position:absolute; width:100%; white-space: pre-line;}
+
+#questionResultHolder{ position:relative; width:100%; height:100%;}
+.questionResultText, .nextImg, .previewImg{ position:absolute;}
+#questionResultHolder .nextImg{ top:65%; width:6%; left:52%;}
+#questionResultHolder .previewImg{ top:65%; width:6%; left:44%;}
+#explanationHolder{ position:absolute; width:100%; height:100%;}
+#explanationHolder .explanation{ position:absolute; width:100%;}
+
+/*-- Result Wrapper -- */
+#resultHolder{display: table; position: absolute; height: 100%; width: 100%;}
+.resultContent{ width:40%; margin:auto; text-align:center; color:#fff;}
+.itemWinnerCup{ width:50%; margin:auto; padding:15% 0 5%;}
+.share{ margin-top:5%;}
+.share ul{ list-style:none; margin:0; padding:0; margin-top:10px;}
+.share li{ width:13%; margin:0 3px; display:inline-block;}
+.option{ margin-top:5%;}
+.option ul{ list-style:none; margin:0; padding:0;}
+.option li{ width:13%; margin:0 3px; display:inline-block;}
+.singleOption li:nth-child(2), .singleOption li:nth-child(3){display:none;}
+.NoSaveOption li:nth-child(2){ display:none;}
+
+/*-- Scoreboard -- */
+#scoreboardHolder{display: table; position: absolute; height: 100%; width: 100%; display: none; top:0; }
+.resultExtra{ width:100%; height:100%; position:absolute; margin:auto; text-align:center; color:#fff; display:none;}
+.scoreContent, .submitContent{ position:relative; background:#107FC9; width:85%; height:90%; -webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px; margin:auto; margin-top:3%;}
+.scoreTitle{ padding:2% 0 0;}
+.scoreContent ul.scoreList{ list-style:none; padding:0; margin:1% auto; width:90%; position:relative; height:72%;}
+.scoreContent ul.scoreList li{ width: 100%; padding:1% 2%; display: table;}
+.scoreContent ul.scoreList li .list{ display: table-cell;}
+.scoreContent ul.scoreList li:nth-child(odd) {	background:#1697ED; }
+
+.scoreContent .left{ position:absolute; width:5%; bottom:2%; left:5%; }
+.scoreContent .right{ position:absolute; width:5%; bottom:2%; right:5%; }
+.scoreContent .center{ width:17%; margin:auto;}
+.scoreContent .loader{ position:absolute; text-align: center; width:10%; top:45%; left:44%; padding: 1% 2%; background-color:rgba(16, 127, 201, 0.5); display:none; }
+
+.submitTitle{ padding:5% 0 2%;}
+.submitContent .label, .submitContent input, .submitContent .fontError{ margin:1% 0; padding: .5% 0; text-align:center;}
+.action{ width:40%; margin:3% auto;}
+.buttonSubmit{ float:left; width:48%;}
+.buttonCancelSubmit{ float:right; width:48%;}
+
+
+.fontStatus{font-family:'Outfit'; font-size:30px; line-height:30px; color:#fff;}
+.fontQuestion{ font-family:'Outfit';}
+.fontAnswer{ font-family:'Outfit';}
+.fontAnswerInput{ font-family:'Outfit';}
+.fontCorrectWrong{ font-family:'Outfit';}
+.fontResultScore{font-family:'Outfit';}
+.fontShare{font-family:'Outfit';}
+.fontCategory{font-family:'Outfit';}
+.fontMessage{font-family:'Outfit';}
+.fontPreload{font-family:'Outfit';}
+.fontScoreTitle{font-family:'Outfit';}
+.fontScoreList{font-family:'Outfit';}
+.fontLabel{font-family:'Outfit';}
+.fontInput{font-family:'Outfit';}
+.fontError{font-family:'Outfit'; color: #FFBF00;}
+
+/*-- Form Wrapper -- */
+#editWrapper{ display:none; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+#floatForm{ position:absolute; left:0; top:0; z-index:100; background:#4DA6FF; padding:15px; color:#FFF; width:280px; border:#fff solid 2px;}
+#floatForm{ font-size:12px;}
+#floatForm #questionWrapper, #floatForm #answersWrapper, #floatForm #inputsWrapper, #floatForm #explanationWrapper, #floatForm #sortWrapper, #floatForm #templateWrapper, #floatForm #videoWrapper, #floatForm #categoryWrapper, #floatForm #sortAnswerWrapper, #floatForm #groupsWrapper, #floatForm #saveWrapper{ background:#0080FF; padding:10px;}
+#floatForm .innerWrapper{ background:#4DA6FF; padding:10px;}
+#floatForm #saveStatus{ width:100%; text-align: center; color: #ff9900; }
+
+#floatForm input.button, #floatForm select.half, #floatForm label{ width:49%;}
+#floatForm .formRow{ height:25px; }
+#floatForm .extraHeight{ height:55px; }
+#floatForm .formRow input, #floatForm .formRow select{ float:right; width:48%;}
+#floatForm .formRow label{ float:left; width:48%;}
+
+#floatForm input{ width:100%; font-size:12px;}
+#floatForm textarea{ float:left; width:100%; resize:none;}
+#floatForm select, #floatForm option{ width:100%;}
+
+.editBorder .question, .editBorder #videoHolder, .editBorder .dropLabel, .editBorder .groupDropLabel, .editBorder .explanation{ outline:#fff000 dashed 2px;}
+.editBorder .buttonClick, .editBorder input{ outline:#F90 dashed 2px;}
+
+.editFrontIndex{ z-index:1000; }
+.editSecondIndex{ z-index:500; }
+.editDrag{ position:absolute; }
+.editDrag:hover{ outline:1px dashed #ccc; }
+.editDrag .ui-icon{ width:18px; height:18px; background: url('../assets/edit_resize.svg');}
+
+.editBorderFocus{ animation-name: borderFocus; animation-duration: .5s; animation-iteration-count: infinite; }
+@keyframes borderFocus {
+  0% { outline:#F90 solid 4px; }
+  50% { outline:#fff solid 4px; }
+  100% { outline:#F90 solid 4px; }
+}
+.editBorderDropFocus{ animation-name: borderDropFocus; animation-duration: .5s; animation-iteration-count: infinite; }
+@keyframes borderDropFocus {
+  0% { outline:#15a30e solid 4px; }
+  50% { outline:#fff solid 4px; }
+  100% { outline:#15a30e solid 4px; }
+}
+
+.buttonClick{ cursor:pointer;}
+.fitImg img{ width:100%; height:auto;}
+.ignorePadding{border:none; -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */}
+
+@media (max-width:1000px) and (orientation:portrait){
+	.logo{ width:90%; margin:auto; padding-top:30%;}
+	#logoHolder .startImg{ width:35%;}
+	#logoHolder .action{ top:60%; }
+
+	#gameStatus{ margin:15px;}
+	#gameStatus .gameTotal{ width:17%;}
+	#gameStatus .gameTimer{ left:35.5%; width:28%;}
+	#option{ width: 10%; top: 10px; right: 10px;}
+	
+	.confirmContent .message{ width:80%; height:55%; left:10%; top:20%; padding:14% 10%;}
+	.confirmContent .okImg{ width:35%; top:46%; left:31%;}
+	.confirmContent .cancelImg{ width:35%; top:57%; left:31%;}
+
+	.categoryContent ul{ padding-top:18%;}
+	.categoryContent li{ width:40%; float:left; margin:0 5%;}
+	.categoryContent .categoryTitle{ min-height:90px;}
+	.categoryContent .nextImg{ width:12%; top:87%; right:36%;}
+	.categoryContent .prevImg{ width:12%; top:87%; left:36%;}
+	.categoryContent .categoryNav{ width:75%; top:3%; left:10%;}
+
+	#questionResultHolder .nextImg{ top:65%; width:15%; left:52%;}
+	#questionResultHolder .previewImg{ top:65%; width:15%; left:35%;}
+	
+	.resultContent{ width:70%;}
+	.itemWinnerCup{ width:50%; margin:auto; padding:35% 0 10%;}
+	
+	.scoreContent, .submitContent{ width:100%;  margin-top:15%; height:85%;}
+	.scoreTitle{ padding:8% 0 0;}
+	.scoreContent ul.scoreList{ list-style:none; padding:0; margin:5% auto 5%; width:90%; position:relative; height:66%;}
+	.scoreContent ul.scoreList li{ padding:2% 2%;}
+	
+	.scoreContent .left{ width:12%; bottom:5%; left:9%; }
+	.scoreContent .right{ width:12%; bottom:5%; right:9%; }
+	.scoreContent .center{ width:30%; margin:auto;}
+	.scoreContent .loader{ width:30%; left:33%; }
+	
+	.submitTitle{ padding:15% 0;}
+	.submitContent .label, .submitContent input, .submitContent .fontError{ margin:2% 0; padding: 1% 0;}
+	.action{ width:30%; margin:3% auto;}
+	.buttonSubmit{ float:none; width:100%; margin-bottom:10%;}
+	.buttonCancelSubmit{ float:none; width:100%;}
+}
+
+@media (max-width:500px) and (orientation:portrait){
+	#gameStatus{ margin:10px;}
+	#option{ width: 8%;}
+	
+	.categoryContent li{ width:45%; float:left; margin:0 2.5%;}
+	.categoryContent .categoryTitle{ min-height:50px;}
+	.categoryContent .nextImg{ width:12%; top:90%; right:36%;}
+	.categoryContent .prevImg{ width:12%; top:90%; left:36%;}
+
+	.resultContent{ width:90%;}
+	.itemWinnerCup{ width:70%; padding-top:30%;}
+
+	.scoreContent .left{ width:12%; bottom:5%; left:9%; }
+	.scoreContent .right{ width:12%; bottom:5%; right:9%; }
+}
 
